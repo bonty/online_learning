@@ -99,7 +99,7 @@ namespace cw_tool {
 
     std::cout << "Read done." << std::endl;
 
-    std::random_shuffle(sfv.begin(), sfv.end());
+    // std::random_shuffle(sfv.begin(), sfv.end());
 
     for (int i = 0; i < iter; ++i) {
       for (size_t j = 0; j < sfv.size(); j++) {
@@ -257,7 +257,7 @@ namespace cw_tool {
         ret += 1.f * fv[i].second + fv[i].second; // initial value of cov[i] is 1.0
       }
       else {
-        ret += cov[fv[i].first] * fv[i].second + fv[i].second;
+        ret += cov[fv[i].first] * fv[i].second * fv[i].second;
       }
     }
     return ret;
